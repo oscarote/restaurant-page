@@ -1,19 +1,9 @@
 import Background from "./nik-owens-40OJLYVWeeM-unsplash.jpg";
-import GitHubLogo from "./githublogo.png";
 import createHeader from "./header";
+import createFooter from "./footer";
 
 
 const contentDiv = document.getElementById("content");
-
-const createFooter = () => {
-    const footer = document.createElement("footer");
-
-    footer.innerHTML = `Foto de <a href="https://unsplash.com/@nik_owens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nik Owens</a> en <a href="https://unsplash.com/es/s/fotos/copyleft-pizza?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash.</a>
-    &nbsp Copyright © <script>document.write(new Date().getFullYear())</script> <a href="https://github.com/oscarote" target="_blank">
-            Oscarote <img id="gh-logo" src="../src/githublogo.png" alt="github logo"></a>`
-
-    contentDiv.appendChild(footer);
-};
 
 const createHome = () => {
     contentDiv.innerText = "";
@@ -35,7 +25,7 @@ const createHome = () => {
 
     contentDiv.appendChild(main);
 
-    createFooter();
+    contentDiv.appendChild(createFooter());
 };
 
 const createMenu = () => {
@@ -51,3 +41,6 @@ const createContact = () => {
 };
 
 createHome();
+
+const homeBtn = document.getElementById("home");
+homeBtn.addEventListener("click", createHome);
