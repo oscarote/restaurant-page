@@ -1,41 +1,9 @@
 import Background from "./nik-owens-40OJLYVWeeM-unsplash.jpg";
 import GitHubLogo from "./githublogo.png";
+import createHeader from "./header";
+
 
 const contentDiv = document.getElementById("content");
-
-const createHeader = () => {
-    const header = document.createElement("header");
-
-    const h1 = document.createElement("h1");
-    h1.innerText = "Pizza Cosco";
-    header.appendChild(h1);
-
-    const nav = document.createElement("nav");
-
-    const homeBtn = document.createElement("button");
-    homeBtn.setAttribute("id", "home");
-    homeBtn.innerText = "Home";
-    nav.appendChild(homeBtn);
-    homeBtn.addEventListener("click", createHome);
-
-    const menuBtn = document.createElement("button");
-    menuBtn.setAttribute("id", "menu");
-    menuBtn.innerText = "Menu";
-    nav.appendChild(menuBtn);
-    menuBtn.addEventListener("click", createMenu);
-
-    const contactBtn = document.createElement("button");
-    contactBtn.setAttribute("id", "contact");
-    contactBtn.innerText = "Contact";
-    nav.appendChild(contactBtn);
-    contactBtn.addEventListener("click", createContact);
-
-    header.appendChild(nav);
-
-    contentDiv.appendChild(header);
-
-    
-};
 
 const createFooter = () => {
     const footer = document.createElement("footer");
@@ -49,7 +17,7 @@ const createFooter = () => {
 
 const createHome = () => {
     contentDiv.innerText = "";
-    createHeader();
+    contentDiv.appendChild(createHeader());
 
     const main = document.createElement("main");
     const mainContentDiv = document.createElement("div");
